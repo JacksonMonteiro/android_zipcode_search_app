@@ -3,4 +3,8 @@
     <string name="cpf_input_placeholder">00000-000</string>
     <string name="cpf_label">Consulte um CEP:</string>
     <string name="consult_cep_button">Consultar Cep</string>
+    <string name="district_label">Bairro:</string>
+    <string name="complement_label">Complemento:</string>
+    <string name="city_label">Cidade</string>
+    <string name="uf_label">UF:</string>
 </resources>
