@@ -3,9 +3,7 @@ package com.example.consultacep.model;
 public class ServerResponse {
     private String result;
     private boolean valid;
-    private String fromValue;
-    private String toType;
-    private String fromType;
+    private String cep;
 
     public ServerResponse() {}
 
@@ -25,27 +23,11 @@ public class ServerResponse {
         this.valid = valid;
     }
 
-    public String getFromValue() {
-        return fromValue;
+    public String getCep() {
+        return cep;
     }
 
-    public void setFromValue(String fromValue) {
-        this.fromValue = fromValue;
-    }
-
-    public String getToType() {
-        return toType;
-    }
-
-    public void setToType(String toType) {
-        this.toType = toType;
-    }
-
-    public String getFromType() {
-        return fromType;
-    }
-
-    public void setFromType(String fromType) {
-        this.fromType = fromType;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 }
