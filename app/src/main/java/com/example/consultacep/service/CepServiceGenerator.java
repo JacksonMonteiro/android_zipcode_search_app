@@ -11,13 +11,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CepServiceGenerator {
 
-    public static final String CEP_URL = "https://correios.contrateumdev.com.br/api/cep";
+    public static final String CEP_URL = "https://viacep.com.br/ws/";
 
     public static <S> S createCepService(Class<S> serviceClass) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient.Builder client = new OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS);
+        client.addInterceptor(interceptor);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(CEP_URL)

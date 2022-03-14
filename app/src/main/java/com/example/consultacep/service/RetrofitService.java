@@ -1,10 +1,12 @@
 package com.example.consultacep.service;
 
-import com.example.consultacep.model.ServerResponse;
+import com.example.consultacep.model.Cep;
 
 import retrofit2.Call;
-import retrofit2.http.Field;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface RetrofitService {
-    Call<ServerResponse> useService(@Field("from-cep") String cep);
+    @GET("{CEP}/json")
+    Call<Cep> consultCep(@Path("CEP") String CEP);
 }

@@ -9,7 +9,7 @@ import android.os.Handler;
 import com.example.consultacep.activities.CepActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int TIMEOUT = 2000;
+    private static final int TIMEOUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
