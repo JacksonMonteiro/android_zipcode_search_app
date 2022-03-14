@@ -23,7 +23,7 @@ public class CepServiceGenerator {
     public static final String CEP_URL = "https://viacep.com.br/ws/";
 
     private Context myContext;
-    private RetrofitService service;
+    private RetrofitCepService service;
 
     public CepServiceGenerator(Context context) {
         this.myContext = context;
@@ -47,8 +47,8 @@ public class CepServiceGenerator {
                 .addConverterFactory(GsonConverterFactory.create(g))
                 .build();
 
-        service = retrofit.create(RetrofitService.class);
-        final RetrofitService service = retrofit.create(RetrofitService.class);
+        service = retrofit.create(RetrofitCepService.class);
+        final RetrofitCepService service = retrofit.create(RetrofitCepService.class);
     }
 
     public void getCep(String cep, final SimpleCallback<Cep> callBack) {
