@@ -1,6 +1,6 @@
 package com.example.consultacep.model;
 
-public class TrakingCode {
+public class trackingCode {
     private String code;
     private String desc;
     private String city;
