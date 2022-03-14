@@ -12,6 +12,7 @@ import java.lang.reflect.Type;
 public class CEPDeserializer implements JsonDeserializer {
     @Override
     public Object deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+
         JsonElement element = json.getAsJsonObject();
 
         if (json.getAsJsonObject() != null) {
