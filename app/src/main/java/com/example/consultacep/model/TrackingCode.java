@@ -1,40 +1,51 @@
 package com.example.consultacep.model;
 
+import java.lang.reflect.Array;
+
 public class TrackingCode {
-    private String code;
-    private String desc;
-    private String city;
-    private String uf;
+    private String codigo;
+    private String servico;
+    private String host;
+    private int quantidade;
+    private Array eventos;
 
-    public String getCode() {
-        return code;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getServico() {
+        return servico;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setServico(String servico) {
+        this.servico = servico;
     }
 
-    public String getCity() {
-        return city;
+    public String getHost() {
+        return host;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setHost(String host) {
+        this.host = host;
     }
 
-    public String getUf() {
-        return uf;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Array getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(Array eventos) {
+        this.eventos = eventos;
     }
 }

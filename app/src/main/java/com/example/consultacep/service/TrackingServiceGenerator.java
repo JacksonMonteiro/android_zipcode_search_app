@@ -18,7 +18,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TrackingServiceGenerator {
-    public static final String TRACKING_URL = "https://proxyapp.correios.com.br/v1/sro-rastro/";
+    public static final String TRACKING_URL = "https://api.linketrack.com/track/";
+
+    public static final String USER = "teste";
+    public static final String TOKEN = "1abcd00b2731640e886fb41a8a9671ad1434c599dbaa0a0de9a5aa619f29a83f";
 
     private Context context;
     private RetrofitTrackingService service;
@@ -51,7 +54,7 @@ public class TrackingServiceGenerator {
     }
 
     public void getTracking(String code, final SimpleCallback<TrackingCode> callback) {
-        service.consultTrackingCode(code).enqueue(new Callback<TrackingCode>() {
+        service.consultTrackingCode(USER, TOKEN, code).enqueue(new Callback<TrackingCode>() {
             @Override
             public void onResponse(Call<TrackingCode> call, Response<TrackingCode> response) {
                 if (response.isSuccessful() && response.body() != null) {

@@ -223,4 +223,13 @@
             android:id="@+id/siafi_value"
             android:textSize="18sp" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/track_activity_button"
+        android:text="Rastrear um pedido"
+        android:textSize="16sp"
+        android:backgroundTint="@android:color/holo_purple"
+        app:cornerRadius="8dp"/>
 </LinearLayout>

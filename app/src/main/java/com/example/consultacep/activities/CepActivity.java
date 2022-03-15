@@ -2,6 +2,7 @@ package com.example.consultacep.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.consultacep.R;
 import com.example.consultacep.model.Cep;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 public class CepActivity extends AppCompatActivity {
     private TextView street_view, complement_view, district_view, city_view, uf_view, ibge_view, gia_view, ddd_view, siafi_view;
     ;
-    private Button consultCepBtn;
+    private Button consultCepBtn, trackActivityBtn;
     private EditText cepInput;
     private ArrayList<Cep> arrayCeps;
     Cep serverResponse = new Cep();
@@ -35,6 +37,9 @@ public class CepActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cep);
+
+        // Disable Night mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         // Assign Variables
         cepInput = findViewById(R.id.cep_input);
@@ -49,6 +54,7 @@ public class CepActivity extends AppCompatActivity {
         siafi_view = findViewById(R.id.siafi_value);
 
         consultCepBtn = findViewById(R.id.consult_cep_button);
+        trackActivityBtn = findViewById(R.id.track_activity_button);
 
         // Cep Mask Application
         cepInput.addTextChangedListener(CepMask.mask(cepInput, CepMask.FORMAT_CEP));
@@ -99,6 +105,10 @@ public class CepActivity extends AppCompatActivity {
                     Toast.makeText(this, "Sem conexão com Internet no momento", Toast.LENGTH_SHORT).show();
                 }
             }
+        });
+
+        trackActivityBtn.setOnClickListener(view -> {
+            startActivity(new Intent(CepActivity.this, TrackingActivity.class));
         });
     }
 
