@@ -1,6 +1,5 @@
 package com.example.consultacep.activities;
 
-<<<<<<< HEAD
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -15,24 +14,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-=======
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
 import com.example.consultacep.R;
 import com.example.consultacep.model.SimpleCallback;
 import com.example.consultacep.model.TrackingCode;
 import com.example.consultacep.service.TrackingServiceGenerator;
 import com.google.gson.Gson;
-<<<<<<< HEAD
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
@@ -45,21 +31,12 @@ public class TrackingActivity extends AppCompatActivity {
     private TextView text_code, text_desc, text_city, text_uf;
     private ProgressDialog progress;
     private TrackingCode track = new TrackingCode();
-=======
-
-public class TrackingActivity extends AppCompatActivity {
-    private EditText trackCodeInput;
-    private TextView text_code;
-    private Button trackButton;
-    private ProgressDialog progress;
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking);
 
-<<<<<<< HEAD
         trackCodeInput = findViewById(R.id.track_code_input);
 
         text_code = findViewById(R.id.code_value);
@@ -70,20 +47,11 @@ public class TrackingActivity extends AppCompatActivity {
 
         cepActivityButton = findViewById(R.id.cep_activity_button);
         consultTrackBtn = findViewById(R.id.consult_track_button);
-=======
-        // Disable Night mode
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        trackCodeInput = findViewById(R.id.track_code_input);
-        text_code = findViewById(R.id.code_value);
-        trackButton = findViewById(R.id.track_button);
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
 
         attachButtonListeners();
     }
 
     public void attachButtonListeners() {
-<<<<<<< HEAD
         consultTrackBtn.setOnClickListener(view -> {
             progress = new ProgressDialog(TrackingActivity.this);
             progress.setTitle("Consultando...");
@@ -166,29 +134,5 @@ public class TrackingActivity extends AppCompatActivity {
         }
 
         return result;
-=======
-        trackButton.setOnClickListener(view -> {
-            progress = new ProgressDialog(TrackingActivity.this);
-            progress.setTitle("Rastreando...");
-            progress.show();
-
-            TrackingServiceGenerator service = new TrackingServiceGenerator(TrackingActivity.this);
-
-            service.getTracking(trackCodeInput.getText().toString(), new SimpleCallback<TrackingCode>() {
-                @Override
-                public void onResponse(TrackingCode response) {
-                    TrackingCode code = response;
-                    text_code.setText(code.getCodigo());
-                    progress.dismiss();
-                }
-
-                @Override
-                public void onError(String error) {
-                    Toast.makeText(getApplicationContext(), "Código Inválido", Toast.LENGTH_SHORT).show();
-                    progress.dismiss();
-                }
-            });
-        });
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
     }
 }

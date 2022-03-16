@@ -1,39 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-=======
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".activities.CepActivity">
 
-<<<<<<< HEAD
     <ImageButton
         android:id="@+id/cep_activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_back" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tracking_code_label"
-=======
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rastreie seu pedido: "
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
+        android:text="Rastrei um pedido: "
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -43,9 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-<<<<<<< HEAD
-        android:autofillHints="postalCode"
-        android:hint="@string/traking_code_input_placeholder"
+        android:autofillHints=""
+        android:hint="QH878046700BR"
         android:inputType="textShortMessage"
         android:textColorHint="@android:color/holo_purple" />
 
@@ -54,24 +39,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="@string/consult_track_button"
-        android:textSize="16sp"
-        app:cornerRadius="8dp" />
-=======
-        android:hint="LX002249507BR"
-        android:inputType="textShortMessage"
-        android:autofillHints=""
-        android:textColorHint="@android:color/holo_purple" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/track_button"
         android:text="Rastrear pedido"
         android:textSize="16sp"
-        android:backgroundTint="@android:color/holo_purple"
-        app:cornerRadius="8dp"/>
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
+        app:cornerRadius="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,11 +50,11 @@
         android:orientation="horizontal">
 
         <TextView
-<<<<<<< HEAD
             android:id="@+id/code_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/code_label"
+            android:layout_marginEnd="8dp"
+            android:text="Código:"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -102,10 +72,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/track_code_desc"
+            android:id="@+id/track_code_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/track_code_label"
+            android:layout_marginEnd="8dp"
+            android:text="Descrição: "
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -126,6 +97,7 @@
             android:id="@+id/city_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:text="@string/city_label"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -147,6 +119,7 @@
             android:id="@+id/uf_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:text="@string/uf_label"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -157,21 +130,4 @@
             android:layout_height="wrap_content"
             android:textSize="18sp" />
     </LinearLayout>
-=======
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Código: "
-            android:id="@+id/code_label"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/code_value"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-
->>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
 </LinearLayout>
