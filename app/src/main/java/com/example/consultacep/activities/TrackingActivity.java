@@ -64,7 +64,7 @@ public class TrackingActivity extends AppCompatActivity {
             if (validate()) {
                 if (checkNetwork()) {
                     TrackingServiceGenerator service = new TrackingServiceGenerator(TrackingActivity.this);
-
+                    cleanTextViews();
                     service.getTracking(trackCodeInput.getText().toString(), new SimpleCallback<TrackingCode>() {
                         @Override
                         public void onResponse(TrackingCode response) {
@@ -74,10 +74,15 @@ public class TrackingActivity extends AppCompatActivity {
 
                             try {
                                 JSONObject jsonObject = new JSONObject(jsonString);
-                                text_code.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getString("codigo"));
-                                text_desc.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getString("descricao"));
-                                text_city.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getJSONObject("unidade").getJSONObject("endereco").getString("cidade"));
-                                text_uf.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getJSONObject("unidade").getJSONObject("endereco").getString("uf"));
+
+                                if (!jsonObject.getString("modalidade").equals("V")) {
+                                    text_code.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getString("codigo"));
+                                    text_desc.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getString("descricao"));
+                                    text_city.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getJSONObject("unidade").getJSONObject("endereco").getString("cidade"));
+                                    text_uf.setText(jsonObject.getJSONArray("eventos").getJSONObject(0).getJSONObject("unidade").getJSONObject("endereco").getString("uf"));
+                                } else {
+                                    Toast.makeText(TrackingActivity.this, jsonObject.getString("mensagem"), Toast.LENGTH_SHORT).show();
+                                }
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -132,5 +137,12 @@ public class TrackingActivity extends AppCompatActivity {
         }
 
         return result;
+    }
+
+    public void cleanTextViews() {
+        text_code.setText("");
+        text_desc.setText("");
+        text_city.setText("");
+        text_uf.setText("");
     }
 }

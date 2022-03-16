@@ -20,6 +20,8 @@ import com.example.consultacep.model.Cep;
 import com.example.consultacep.model.SimpleCallback;
 import com.example.consultacep.service.CepServiceGenerator;
 import com.example.consultacep.utils.CepMask;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class CepActivity extends AppCompatActivity {
     private TextView street_view, complement_view, district_view, city_view, uf_view, ibge_view, gia_view, ddd_view, siafi_view;
@@ -62,6 +64,8 @@ public class CepActivity extends AppCompatActivity {
             progress.setTitle("Consultando...");
             progress.show();
 
+            cleanTextViews();
+
             InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             if (inputManager != null) {
                 inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -73,17 +77,22 @@ public class CepActivity extends AppCompatActivity {
 
                     service.getCep(cepInput.getText().toString().replace("-", ""), new SimpleCallback<Cep>() {
                         @Override
-                        public void onResponse(Cep response) {
+                        public void onResponse(Cep response) { 
+                            
+                            if (!response.isErro()) {
+                                street_view.setText(response.getLogradouro());
+                                complement_view.setText(response.getComplemento());
+                                district_view.setText(response.getBairro());
+                                city_view.setText(response.getLocalidade());
+                                uf_view.setText(response.getUf());
+                                siafi_view.setText(response.getSiafi());
+                                ibge_view.setText(response.getIbge());
+                                gia_view.setText(response.getGia());
+                                ddd_view.setText(response.getDdd());
+                            } else {
+                                Toast.makeText(CepActivity.this, "CEP Inválido, por favor, tente outro", Toast.LENGTH_LONG).show();
+                            }
 
-                            street_view.setText(response.getLogradouro());
-                            complement_view.setText(response.getComplemento());
-                            district_view.setText(response.getBairro());
-                            city_view.setText(response.getLocalidade());
-                            uf_view.setText(response.getUf());
-                            ibge_view.setText(response.getIbge());
-                            gia_view.setText(response.getGia());
-                            ddd_view.setText(response.getDdd());
-                            siafi_view.setText(response.getSiafi());
                             progress.dismiss();
                         }
 
@@ -140,5 +149,17 @@ public class CepActivity extends AppCompatActivity {
         }
 
         return result;
+    }
+
+    public void cleanTextViews() {
+        street_view.setText("");
+        complement_view.setText("");
+        district_view.setText("");
+        city_view.setText("");
+        uf_view.setText("");
+        siafi_view.setText("");
+        ibge_view.setText("");
+        gia_view.setText("");
+        ddd_view.setText("");
     }
 }

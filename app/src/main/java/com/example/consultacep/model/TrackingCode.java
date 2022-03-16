@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class TrackingCode {
     private ArrayList<Object> objetos;
+    private String messagem;
     private int quantidade;
     private String resultado;
     private String versao;
@@ -14,6 +15,14 @@ public class TrackingCode {
 
     public void setObjetos(ArrayList<Object> objetos) {
         this.objetos = objetos;
+    }
+
+    public String getMessagem() {
+        return messagem;
+    }
+
+    public void setMessagem(String messagem) {
+        this.messagem = messagem;
     }
 
     public int getQuantidade() {

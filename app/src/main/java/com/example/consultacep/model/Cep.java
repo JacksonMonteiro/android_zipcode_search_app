@@ -1,6 +1,7 @@
 package com.example.consultacep.model;
 
 public class Cep {
+    private boolean erro;
     private String cep;
     private String logradouro;
     private String complemento;
@@ -11,6 +12,14 @@ public class Cep {
     private String gia;
     private String ddd;
     private String siafi;
+
+    public boolean isErro() {
+        return erro;
+    }
+
+    public void setErro(boolean erro) {
+        this.erro = erro;
+    }
 
     public String getCep() {
         return cep;
