@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.consultacep.R;
 import com.example.consultacep.model.Cep;
@@ -25,6 +26,10 @@ import java.util.ArrayList;
 
 public class CepActivity extends AppCompatActivity {
     private TextView street_view, complement_view, district_view, city_view, uf_view, ibge_view, gia_view, ddd_view, siafi_view;
+<<<<<<< HEAD
+=======
+    ;
+>>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
     private Button consultCepBtn, trackActivityBtn;
     private EditText cepInput;
     private ArrayList<Cep> arrayCeps;
@@ -35,6 +40,9 @@ public class CepActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cep);
+
+        // Disable Night mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         // Assign Variables
         cepInput = findViewById(R.id.cep_input);
@@ -103,7 +111,11 @@ public class CepActivity extends AppCompatActivity {
         });
 
         trackActivityBtn.setOnClickListener(view -> {
+<<<<<<< HEAD
             startActivity(new Intent(getApplicationContext(), TrackingActivity.class));
+=======
+            startActivity(new Intent(CepActivity.this, TrackingActivity.class));
+>>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
         });
     }
 

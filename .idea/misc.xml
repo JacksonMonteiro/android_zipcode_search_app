@@ -7,7 +7,12 @@
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/drawable/ic_post_office.xml" value="0.1605" />
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_cep.xml" value="0.1" />
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+<<<<<<< HEAD
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_tracking.xml" value="0.19010416666666666" />
+=======
+        <entry key="..\:/Users/ibyte/Desktop/develop_mobile/consulta_cep_app/app/src/main/res/layout/activity_cep.xml" value="0.15760869565217392" />
+        <entry key="..\:/Users/ibyte/Desktop/develop_mobile/consulta_cep_app/app/src/main/res/layout/activity_tracking.xml" value="0.22" />
+>>>>>>> b040973b95a29fa8941c1513bea2a190bf3a2349
       </map>
     </option>
   </component>
