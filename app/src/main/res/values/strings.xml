@@ -12,4 +12,11 @@
     <string name="ddd_label">DDD: </string>
     <string name="siafi_label">SIAFI: </string>
     <string name="street_label">Logradouro:</string>
+    <string name="tracking_code_label">Consulte o código do seu pedido:</string>
+    <string name="traking_code_input_placeholder">QH878046700BR</string>
+    <string name="consult_track_button">Consultar código de rastreio</string>
+    <string name="code_label">Código:</string>
+    <string name="track_code_label">Descrição:</string>
+    <string name="track_activity_button">Consultar código de rastreio</string>
+    <string name="cep_activity_button">Consultar Cep</string>
 </resources>

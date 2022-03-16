@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/drawable/ic_back.xml" value="0.1605" />
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/drawable/ic_post_office.xml" value="0.1605" />
-        <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_cep.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_cep.xml" value="0.1" />
         <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/GFX2/AndroidStudioProjects/ConsultaCep/app/src/main/res/layout/activity_tracking.xml" value="0.19010416666666666" />
       </map>
     </option>
   </component>

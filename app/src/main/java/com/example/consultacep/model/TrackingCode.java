@@ -1,40 +1,51 @@
 package com.example.consultacep.model;
 
+import androidx.annotation.NonNull;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class TrackingCode {
-    private String code;
-    private String desc;
-    private String city;
-    private String uf;
+    private ArrayList<Object> objetos;
+    private int quantidade;
+    private String resultado;
+    private String versao;
 
-    public String getCode() {
-        return code;
+    public ArrayList<Object> getObjetos() {
+        return objetos;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setObjetos(ArrayList<Object> objetos) {
+        this.objetos = objetos;
     }
 
-    public String getDesc() {
-        return desc;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public String getCity() {
-        return city;
+    public String getResultado() {
+        return resultado;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
     }
 
-    public String getUf() {
-        return uf;
+    public String getVersao() {
+        return versao;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
+    public void setVersao(String versao) {
+        this.versao = versao;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Track code [objeto=" + this.objetos + ", quantidade=" + quantidade + ", resultado=" + resultado + ", versao=" + versao;
     }
 }

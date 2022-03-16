@@ -91,16 +91,4 @@ public class Cep {
     public void setSiafi(String siafi) {
         this.siafi = siafi;
     }
-
-    public String showResult() {
-        return "Logradouro: " + this.logradouro +
-                "\n Complemento: " + this.complemento +
-                "\n Bairro: " + this.bairro +
-                "\n Localidade: " + this.localidade +
-                "\n UF: " + this.uf +
-                "\n IBGE: " + this.ibge +
-                "\n GIA: " + this.gia +
-                "\n DDD: " + this.ddd +
-                "\n SIAFI: " + this.siafi;
-    }
 }
