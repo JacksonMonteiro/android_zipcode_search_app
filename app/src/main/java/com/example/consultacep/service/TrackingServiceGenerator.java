@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class TrackingServiceGenerator {
     public static final String TRACKING_URL = "https://proxyapp.correios.com.br/v1/sro-rastro/";
 
-    private Context context;
+    private final Context context;
     private RetrofitTrackingService service;
 
     public TrackingServiceGenerator(Context context) {

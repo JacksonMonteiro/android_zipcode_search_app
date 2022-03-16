@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,14 +21,10 @@ import com.example.consultacep.model.SimpleCallback;
 import com.example.consultacep.service.CepServiceGenerator;
 import com.example.consultacep.utils.CepMask;
 
-import java.util.ArrayList;
-
 public class CepActivity extends AppCompatActivity {
     private TextView street_view, complement_view, district_view, city_view, uf_view, ibge_view, gia_view, ddd_view, siafi_view;
     private Button consultCepBtn, trackActivityBtn;
     private EditText cepInput;
-    private ArrayList<Cep> arrayCeps;
-    Cep serverResponse = new Cep();
     ProgressDialog progress;
 
     @Override
@@ -79,17 +74,16 @@ public class CepActivity extends AppCompatActivity {
                     service.getCep(cepInput.getText().toString().replace("-", ""), new SimpleCallback<Cep>() {
                         @Override
                         public void onResponse(Cep response) {
-                            Cep cep = response;
 
-                            street_view.setText(cep.getLogradouro());
-                            complement_view.setText(cep.getComplemento());
-                            district_view.setText(cep.getBairro());
-                            city_view.setText(cep.getLocalidade());
-                            uf_view.setText(cep.getUf());
-                            ibge_view.setText(cep.getIbge());
-                            gia_view.setText(cep.getGia());
-                            ddd_view.setText(cep.getDdd());
-                            siafi_view.setText(cep.getSiafi());
+                            street_view.setText(response.getLogradouro());
+                            complement_view.setText(response.getComplemento());
+                            district_view.setText(response.getBairro());
+                            city_view.setText(response.getLocalidade());
+                            uf_view.setText(response.getUf());
+                            ibge_view.setText(response.getIbge());
+                            gia_view.setText(response.getGia());
+                            ddd_view.setText(response.getDdd());
+                            siafi_view.setText(response.getSiafi());
                             progress.dismiss();
                         }
 
@@ -106,9 +100,7 @@ public class CepActivity extends AppCompatActivity {
             }
         });
 
-        trackActivityBtn.setOnClickListener(view -> {
-            startActivity(new Intent(getApplicationContext(), TrackingActivity.class));
-        });
+        trackActivityBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), TrackingActivity.class)));
     }
 
     public boolean validate() {

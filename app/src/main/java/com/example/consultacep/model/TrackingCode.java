@@ -1,8 +1,5 @@
 package com.example.consultacep.model;
 
-import androidx.annotation.NonNull;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TrackingCode {

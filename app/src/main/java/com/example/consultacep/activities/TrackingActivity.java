@@ -30,7 +30,6 @@ public class TrackingActivity extends AppCompatActivity {
     private EditText trackCodeInput;
     private TextView text_code, text_desc, text_city, text_uf;
     private ProgressDialog progress;
-    private TrackingCode track = new TrackingCode();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +68,9 @@ public class TrackingActivity extends AppCompatActivity {
                     service.getTracking(trackCodeInput.getText().toString(), new SimpleCallback<TrackingCode>() {
                         @Override
                         public void onResponse(TrackingCode response) {
-                            TrackingCode code = response;
 
                             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                            String jsonString = gson.toJson(code.getObjetos().get(0));
+                            String jsonString = gson.toJson(response.getObjetos().get(0));
 
                             try {
                                 JSONObject jsonObject = new JSONObject(jsonString);
