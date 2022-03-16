@@ -1,6 +1,5 @@
 package com.example.consultacep.model;
 
-<<<<<<< HEAD:app/src/main/java/com/example/consultacep/model/TrackingCode.java
 import java.lang.reflect.Array;
 
 public class TrackingCode {
@@ -17,13 +16,6 @@ public class TrackingCode {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-=======
-public class trackingCode {
-    private String code;
-    private String desc;
-    private String city;
-    private String uf;
->>>>>>> parent of 0a08ed1 (Tracking Service Generator class):app/src/main/java/com/example/consultacep/model/trackingCode.java
 
     public String getServico() {
         return servico;
