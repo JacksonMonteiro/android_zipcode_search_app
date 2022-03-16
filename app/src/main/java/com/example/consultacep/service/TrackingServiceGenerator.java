@@ -1,23 +1,16 @@
 package com.example.consultacep.service;
 
-import android.content.Context;
-
-import com.example.consultacep.model.SimpleCallback;
-import com.example.consultacep.model.TrackingCode;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TrackingServiceGenerator {
+<<<<<<< HEAD
     public static final String TRACKING_URL = "https://api.linketrack.com/track/";
 
     public static final String USER = "teste";
@@ -25,30 +18,24 @@ public class TrackingServiceGenerator {
 
     private Context context;
     private RetrofitTrackingService service;
+=======
+>>>>>>> parent of 0a08ed1 (Tracking Service Generator class)
 
-    public TrackingServiceGenerator(Context context) {
-        this.context = context;
-        initialize();
-    }
+    public static final String TRACKING_URL = "https://correios.contrateumdev.com.br/api/rastreio";
 
-    public void initialize() {
-        Gson g = new GsonBuilder().create();
+    public static <S> S CreateTrackingService(Class<S> serviceClass) {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(15, TimeUnit.MINUTES)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(15, TimeUnit.SECONDS)
-                .addInterceptor(interceptor)
-                .build();
+        OkHttpClient.Builder client = new OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(TRACKING_URL)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create(g))
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                .client(client.build())
                 .build();
 
+<<<<<<< HEAD
         service = retrofit.create(RetrofitTrackingService.class);
         final RetrofitTrackingService service = retrofit.create(RetrofitTrackingService.class);
     }
@@ -74,5 +61,8 @@ public class TrackingServiceGenerator {
                 callback.onError(t.getMessage());
             }
         });
+=======
+        return retrofit.create(serviceClass);
+>>>>>>> parent of 0a08ed1 (Tracking Service Generator class)
     }
 }
